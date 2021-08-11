@@ -1,13 +1,17 @@
 const { Observable, fromEvent} = rxjs;
 const {  map, pipe} = rxjs.operators;
 
-const INTERVAL_TIME = 30000;
+const INTERVAL_TIME = 3000;
 
 const input = document.querySelector('#inputText');
 const output = document.querySelector('#outputText');
 
 const clearOutput = (output) => {
     output.innerHTML = "";
+}
+
+const disableInput = (input) => {
+    input.disabled = true;
 }
 
 const showOutput = (text) => {
@@ -19,18 +23,19 @@ const mirrorWords = (str) => {
 }
 
 
-
 const observer = {
     next: (e) => showOutput(e),
     complete: () =>{ 
         console.log("Finalizado subscripcion en forma normal");
         clearOutput(output);
+        disableInput(input);
         subscription.unsubscribe();
     },
     
     error: () => {
         console.log("Finalizado subscripcion debido a un error");
         clearOutput(output);
+        disableInput(input);
         subscription.unsubscribe();
     },
 }
@@ -64,6 +69,7 @@ let subscription = filterInput.subscribe(observer);
 
 var timeoutId = setTimeout(() => {
     clearOutput(output);
+    disableInput(input);
     console.log("Subscripcion Finalizada debido al tiempo");
     subscription.unsubscribe();
 }, INTERVAL_TIME)
