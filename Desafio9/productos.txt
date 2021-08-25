@@ -1,0 +1,1 @@
+[{"title":"escuadra","price":12345,"thumbnail":"http/....../"},{"title":"Archivo-95","precio":"89","thumbnail":"./urldeprueba-1","id":"2"},{"title":"Archivo-38","precio":"84","thumbnail":"./urldeprueba-3","id":"3"},{"title":"Archivo-86","precio":"77","thumbnail":"./urldeprueba-2","id":"4"}]

@@ -1,7 +1,7 @@
 
 import express from 'express';
 const app = express();
-const PORT = 8092;
+const PORT = 8080;
 
 const PATH_ITEMS ='/items';
 const PATH_ITEMS_RANDOM ='/item-random';
